@@ -1,0 +1,1 @@
+*/10 * * * * cd /mnt/c/udacity/ML-DevOps-Engineer/Udacity_ML-DevOps-Engineer_P4_Dynamic_Risk_Assessment_System && /mnt/c/udacity/ML-DevOps-Engineer/Udacity_ML-DevOps-Engineer_P4_Dynamic_Risk_Assessment_System/.venv/Scripts/python.exe fullprocess.py >> /tmp/dras_fullprocess.log 2>&1
