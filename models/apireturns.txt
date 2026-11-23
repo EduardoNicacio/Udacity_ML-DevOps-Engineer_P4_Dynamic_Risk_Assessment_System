@@ -2,7 +2,7 @@
   "scoring": {
     "f1_score": 0.3333333333333333
   },
-  "prediction": {
+  "predictions": {
     "predictions": [
       0,
       1,
@@ -11,7 +11,7 @@
       1
     ]
   },
-  "summarystats": {
+  "summary_statistics": {
     "summary_statistics": [
       {
         "column": "lastmonth_activity",
@@ -91,6 +91,11 @@
         "current_version": "3.1.3",
         "latest_version": "3.1.3",
         "package": "Flask"
+      },
+      {
+        "current_version": "2.9.0",
+        "latest_version": "2.9.0",
+        "package": "fpdf2"
       },
       {
         "current_version": "23.0.0",
@@ -194,8 +199,8 @@
       }
     ],
     "execution_time": [
-      0.9190667000075337,
-      2.0969509000133257
+      0.9679899000038859,
+      3.787853299989365
     ],
     "missing_data": [
       {

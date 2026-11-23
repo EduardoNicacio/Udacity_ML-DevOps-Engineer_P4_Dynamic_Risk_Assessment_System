@@ -31,9 +31,15 @@ def store_model_into_pickle():
         (os.path.join(dataset_csv_path, 'ingestedfiles.txt'), 'ingestedfiles.txt'),
     ]
 
+    # Validate everything BEFORE copying so a missing artefact can never leave
+    # production with a partially updated set (e.g. new model + stale score).
+    missing = [source for source, _ in artefacts if not os.path.exists(source)]
+    if missing:
+        raise FileNotFoundError(
+            "Deployment aborted, missing artefact(s): " + ', '.join(missing)
+        )
+
     for source, name in artefacts:
-        if not os.path.exists(source):
-            raise FileNotFoundError(f"Missing deployment artefact: {source}")
         shutil.copy2(source, os.path.join(prod_deployment_path, name))
 
     print(f"Deployed model, score and ingestion record to {prod_deployment_path}")

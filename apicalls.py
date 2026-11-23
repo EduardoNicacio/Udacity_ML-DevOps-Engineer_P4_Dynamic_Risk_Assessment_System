@@ -42,8 +42,8 @@ def call_all_endpoints(output_suffix='', timeout=300):
 
     responses = {
         'scoring': scoring_response.json(),
-        'prediction': prediction_response.json(),
-        'summarystats': summary_response.json(),
+        'predictions': prediction_response.json(),
+        'summary_statistics': summary_response.json(),
         'diagnostics': diagnostics_response.json(),
     }
 

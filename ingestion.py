@@ -34,13 +34,11 @@ def merge_multiple_dataframe():
     csv_files = sorted(glob.glob(os.path.join(input_folder_path, '*.csv')))
 
     if not csv_files:
-        print(f"No CSV files found in {input_folder_path}")
-        os.makedirs(output_folder_path, exist_ok=True)
-        # Still refresh the ingestion record so downstream steps see an
-        # empty (but well-formed) state instead of a stale one.
-        with open(os.path.join(output_folder_path, 'ingestedfiles.txt'), 'w') as f:
-            pass
-        return
+        # Fail loudly: silently writing an empty ingestedfiles.txt would leave
+        # the ingestion record inconsistent with the (stale) finaldata.csv.
+        raise FileNotFoundError(
+            f"No CSV files found in input folder: {input_folder_path}"
+        )
 
     frames = [pd.read_csv(path) for path in csv_files]
     combined = pd.concat(frames, ignore_index=True)

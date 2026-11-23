@@ -1,62 +1,62 @@
 {
   "scoring": {
-    "f1_score": 0.5
+    "f1_score": 0.3333333333333333
   },
-  "prediction": {
+  "predictions": {
     "predictions": [
+      0,
+      1,
       1,
       0,
-      0,
-      0,
-      0
+      1
     ]
   },
-  "summarystats": {
+  "summary_statistics": {
     "summary_statistics": [
       {
         "column": "lastmonth_activity",
         "stat": "mean",
-        "value": 576.875
+        "value": 5625.923076923077
       },
       {
         "column": "lastmonth_activity",
         "stat": "median",
-        "value": 455.0
+        "value": 425.0
       },
       {
         "column": "lastmonth_activity",
         "stat": "std",
-        "value": 636.7155537825124
+        "value": 19444.774621317832
       },
       {
         "column": "lastyear_activity",
         "stat": "mean",
-        "value": 1656.875
+        "value": 763.5384615384615
       },
       {
         "column": "lastyear_activity",
         "stat": "median",
-        "value": 1300.0
+        "value": 97.5
       },
       {
         "column": "lastyear_activity",
         "stat": "std",
-        "value": 1754.8971021930927
+        "value": 2016.6093569309696
       },
       {
         "column": "number_of_employees",
         "stat": "mean",
-        "value": 36.75
+        "value": 457.46153846153845
       },
       {
         "column": "number_of_employees",
         "stat": "median",
-        "value": 22.5
+        "value": 99.0
       },
       {
         "column": "number_of_employees",
         "stat": "std",
-        "value": 39.369132215843564
+        "value": 800.604832899189
       },
       {
         "column": "exited",
@@ -71,7 +71,7 @@
       {
         "column": "exited",
         "stat": "std",
-        "value": 0.5345224838248488
+        "value": 0.5099019513592785
       }
     ]
   },
@@ -91,6 +91,11 @@
         "current_version": "3.1.3",
         "latest_version": "3.1.3",
         "package": "Flask"
+      },
+      {
+        "current_version": "2.9.0",
+        "latest_version": "2.9.0",
+        "package": "fpdf2"
       },
       {
         "current_version": "23.0.0",
@@ -194,8 +199,8 @@
       }
     ],
     "execution_time": [
-      0.9095192000095267,
-      2.124031500017736
+      0.9847562000213657,
+      2.2236407000164036
     ],
     "missing_data": [
       {

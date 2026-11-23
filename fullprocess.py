@@ -119,6 +119,16 @@ print('Generating second-run reports against the currently deployed model...')
 
 reporting.score_model_reporting('confusionmatrix2.png')
 
-subprocess.run([sys.executable, 'apicalls.py', '--second-run'], check=True)
+try:
+    subprocess.run([sys.executable, 'apicalls.py', '--second-run'], check=True)
+except subprocess.CalledProcessError:
+    # Most likely cause: app.py is not listening on port 8000 (e.g. a cron
+    # run). Fail with an actionable message instead of a raw traceback; the
+    # confusion matrix above has already been written.
+    raise SystemExit(
+        'ERROR: apicalls.py failed, so apireturns2.txt was NOT generated. '
+        'Start the API first (python app.py) so it listens on port 8000, '
+        'then re-run fullprocess.py. confusionmatrix2.png is already saved.'
+    )
 
 print('Full process complete.')
